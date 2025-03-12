@@ -96,6 +96,9 @@
 }
 
 @media (max-width: 768px) {
+    .footer {
+        width: 99vw;
+    }
     .footer-container {
         flex-direction: column;
         text-align: center;

@@ -12,6 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
+      <h1 style={{display:"none"}}>hello</h1>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />

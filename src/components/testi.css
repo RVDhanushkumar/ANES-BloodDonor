@@ -20,7 +20,8 @@
     scale: 1.1;
 }
 .testimonial-card:hover{
-    scale: 1.01;
+    scale: 1.05;
+    z-index: 10;
 }
 .testimonial-card:nth-child(2):hover{
     scale: 1.15;
@@ -45,14 +46,14 @@
     gap: 20px;
     position: relative;
     z-index: 1;
-    transition: color 0.5s ease-in-out;
+    transition: color 0.1s ease-in-out;
 }
 
 .testimonial-quote-icon,
 .testimonial-text,
 .testimonial-name,
 .testimonial-username {
-    transition: color 0.4s ease-in-out;
+    transition: color 0.3s ease-in-out;
 }
 
 .testimonial-footer {
@@ -76,7 +77,6 @@
     background-color: rgba(92, 203, 222);
 }
 
-/* Hover Effect - Text & Footer */
 .testimonial-card:hover .testimonial-content,
 .testimonial-card:hover .testimonial-footer {
     color: white;
@@ -87,4 +87,14 @@
 }
 .testimonial-quote-icon {
     height: 23px;
+}
+@media (max-width:700px){
+    .testimonial-card:nth-child(2){
+        scale: 1;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .testimonial-card:nth-child(2):hover{
+        scale: 1.05;
+    }
 }

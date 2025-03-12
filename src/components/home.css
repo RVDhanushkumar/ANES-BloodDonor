@@ -111,3 +111,9 @@
         scale: 1;
     }
 }
+
+@media (max-width:700px){
+    .testi{
+        display: block;
+    }
+}

@@ -4,6 +4,7 @@ import pic1 from "../assets/bg.png"
 import Whydonate from './whydonate';
 import Certi from './certi';
 import TestimonialFullWidth from './testi';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
               <div className='text'>
               <h1>Save Lives, Be a Hero – <span style={{color:"rgba(92, 203, 222)"}}>Donate Blood Today</span></h1>
               <p>Donate blood, save lives! A single donation can make a life-saving difference for <br /> those in need. Join us in this noble cause and be the reason someone gets a second<br /> chance. Every drop counts! ❤️</p>
-              <button>Donate Now</button>
+              <Link to="/register"><button>Donate Now</button></Link>
               </div>
           </div>
           <div className='pic'>
