@@ -49,16 +49,16 @@
   
   .filter-container {
     display: flex;
-    justify-content: space-between; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
     background-color: rgba(92, 203, 222);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     color: white;
     max-width: 1180px;
-    margin: 0 auto; /* Center the container */
-    flex-wrap: wrap; /* Wrap items if needed */
+    margin: 0 auto;
+    flex-wrap: wrap;
   }
   
   .filter-container label{
