@@ -1,5 +1,6 @@
 .home_main{
     padding-top: 50px;
+    overflow-x: hidden;
 }
 .home{
     padding: 10px;
