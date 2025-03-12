@@ -1,0 +1,102 @@
+/* Main container */
+.certi_main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.cleft {
+    flex: 1;
+    text-align: center;
+}
+
+.certi_img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.certi_img:hover {
+    transform: scale(1.03);
+}
+
+.cright {
+    flex: 1;
+}
+
+.cright h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.cright p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.cright h3 {
+    font-size: 18px;
+    color: #222;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.cright ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.cright ul li {
+    font-size: 16px;
+    color: #444;
+    padding: 6px 0;
+    border-left: 3px solid #ccc;
+    padding-left: 12px;
+}
+
+.cta {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    margin-top: 20px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .certi_main {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .cleft {
+        order: -1;
+    }
+
+    .cright h2 {
+        font-size: 22px;
+    }
+
+    .cright p {
+        font-size: 15px;
+    }
+
+    .cright h3 {
+        font-size: 17px;
+    }
+
+    .cta {
+        font-size: 16px;
+    }
+}

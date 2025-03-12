@@ -1,0 +1,91 @@
+.home_main{
+    padding-top: 50px;
+}
+.home{
+    padding: 10px;
+    display: flex;
+    overflow-x: hidden;
+}
+.extra{
+    height: 350px;
+    margin-left: -50px;
+    width: 500px;
+    background-color: rgba(92, 203, 222, 0.777);
+    position: absolute;
+    z-index: -1;
+    clip-path: path("M 100 80 Q 200 10 300 50 T 450 150 Q 500 200 480 260 T 400 340 Q 350 400 250 380 T 100 300 Q 20 250 40 180 T 100 80 Z");
+    animation: wobble 5s infinite alternate ease-in-out;
+}
+.left{
+    width: 50%;
+    height: 90vh;
+    display: grid;
+    place-content: center;
+    font-size: 1.2rem;
+}
+.left button{
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(92, 203, 222, 0.777);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+.left button:hover{
+    box-shadow: 0px 0px 10px rgba(92, 203, 222, 0.777);
+    scale:1.1;
+}
+.text{
+    max-width: 450px;
+}
+.pic{
+    height: 90vh;
+    width: 50%;
+    display: grid;
+    place-content: center;
+}
+.pic img{
+    height: 400px;
+}
+
+
+@media (max-width:800px){
+    .home{
+        display: grid;
+        place-content: center;
+    }
+    .pic{
+        height: auto;
+        width: 100%;
+        display: grid;
+        place-content: center;
+    }
+    .left{
+        margin-top: 100px;
+        height: auto;
+        display: block;
+        width: 100%;
+        padding-inline: 20px;
+        max-width: 450px;
+    }
+    .text{
+        font-size: 1rem;
+    }
+}
+
+
+@keyframes wobble {
+    0% { clip-path: path("M 100 80 Q 200 10 300 50 T 450 150 Q 500 200 480 260 T 400 340 Q 350 400 250 380 T 100 300 Q 20 250 40 180 T 100 80 Z"); }
+    50% { clip-path: path("M 120 90 Q 210 30 290 60 T 460 160 Q 510 220 470 270 T 390 330 Q 340 390 240 370 T 110 290 Q 30 240 50 190 T 120 90 Z"); }
+    100% { clip-path: path("M 100 80 Q 200 10 300 50 T 450 150 Q 500 200 480 260 T 400 340 Q 350 400 250 380 T 100 300 Q 20 250 40 180 T 100 80 Z"); }
+}
+.tes{
+    display: grid;
+    place-content: center;
+    padding:100px;
+    text-align: center;
+}
+.testi{
+    display: flex;
+}

@@ -1,0 +1,82 @@
+/* BloodList.css */
+.blood-list-container {
+    background-color: #fef0ef;
+    min-height: 100vh;
+    padding: 20px;
+    padding-top: 100px;
+  }
+  
+  .title {
+    text-align: center;
+    color: rgba(92, 203, 222);
+    margin-bottom: 20px;
+  }
+  
+  .loading, .error {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+  }
+  
+  .error {
+    color: #ff6b6b;
+  }
+  
+  .filter-container {
+    display: flex;
+    justify-content: space-between; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 10px;
+    background-color: rgba(92, 203, 222);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    max-width: 1180px;
+    margin: 0 auto; /* Center the container */
+    flex-wrap: wrap; /* Wrap items if needed */
+  }
+  
+  .filter-container label{
+    padding-right: 10px;
+  }
+  .filter-container select {
+    border-radius: 10px;
+    padding: 5px;
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  .blood-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .blood-table th {
+    padding: 15px;
+    text-align: left;
+    background-color: rgba(92, 203, 222);
+    color: white;
+  }
+  
+  .blood-table td {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .blood-table tr:nth-child(even) {
+    background-color: rgba(92, 203, 222, 0.2);
+  }
+  
+  .blood-table tr:hover {
+    background-color: rgba(92, 203, 222, 0.3);
+  }
+  
