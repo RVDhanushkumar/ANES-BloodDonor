@@ -35,7 +35,11 @@ const BloodList = () => {
     fetchData();
   }, [blood,alldata]);
 
-  if (loading) return <div className="loading">Loading...</div>;
+  if (loading) return <div className="loading">
+    <div className="shimmer">
+        Loading...
+    </div>
+  </div>;
   if (error) return <div className="error">Error: {error}</div>;
 
   return (
