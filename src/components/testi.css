@@ -1,9 +1,8 @@
-/* Main Card Container */
 .testimonial-card {
     display: flex;
     margin: 10px;
     flex-direction: column;
-    max-width: 384px; 
+    max-width: 250px; 
     align-items: center;
     justify-content: space-between;
     border: 1px solid #e5e7eb;
@@ -13,6 +12,30 @@
         0px 2px 4px rgba(0, 0, 0, 0.06), 
         0px 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    position: relative;
+    transition: color 0.5s ease-in-out;
+    cursor: pointer;
+}
+.testimonial-card:nth-child(2){
+    scale: 1.1;
+}
+.testimonial-card:hover{
+    scale: 1.01;
+}
+.testimonial-card:nth-child(2):hover{
+    scale: 1.15;
+}
+.testimonial-card::before {
+    position: absolute;
+    content: "";
+    top: -40px;  
+    right: -40px;
+    width: 120px; 
+    height: 120px;
+    border-radius: 50%; 
+    background-color: rgba(92, 203, 222); 
+    z-index: 0; 
+    transition: all 0.5s ease-in-out;
 }
 
 .testimonial-content {
@@ -20,40 +43,48 @@
     flex-direction: column;
     padding: 24px 24px 40px; 
     gap: 20px;
+    position: relative;
+    z-index: 1;
+    transition: color 0.5s ease-in-out;
 }
 
-.testimonial-quote-icon {
-    width: 24px;
-    height: 18px;
-    color: #9ca3af; 
-}
-
-/* Testimonial Text */
-.testimonial-text {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #1f2937; 
-    hyphens: auto;
-    margin: 0;
+.testimonial-quote-icon,
+.testimonial-text,
+.testimonial-name,
+.testimonial-username {
+    transition: color 0.4s ease-in-out;
 }
 
 .testimonial-footer {
     display: flex;
     align-items: center;
-    gap: 8px; /* Equivalent to space-x-2 */
-    background-color: #f9fafb; /* Equivalent to bg-gray-50 */
-    padding: 24px 24px 20px; /* Equivalent to px-6 pt-6 pb-5 */
-    border-radius: 0 0 12px 12px; /* Rounded bottom */
+    gap: 8px; 
+    background-color: #f9fafb; 
+    padding: 24px 24px 20px;
+    border-radius: 0 0 12px 12px;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.5s ease-in-out;
 }
 
-.testimonial-name {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0;
+.testimonial-card:hover::before {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-radius: 0;
+    background-color: rgba(92, 203, 222);
 }
 
-.testimonial-username {
-    font-size: 14px;
-    color: #6b7280; 
-    margin: 4px 0 0 0;
+/* Hover Effect - Text & Footer */
+.testimonial-card:hover .testimonial-content,
+.testimonial-card:hover .testimonial-footer {
+    color: white;
+}
+
+.testimonial-card:hover .testimonial-footer {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.testimonial-quote-icon {
+    height: 23px;
 }

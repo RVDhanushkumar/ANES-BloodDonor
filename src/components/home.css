@@ -23,6 +23,7 @@
     display: grid;
     place-content: center;
     font-size: 1.2rem;
+    animation: fadein 0.5s ;
 }
 .left button{
     height: 40px;
@@ -89,4 +90,19 @@
 }
 .testi{
     display: flex;
+}
+
+@keyframes fadein {
+    0%{
+        opacity: 0;
+        scale: 1;
+    }
+    50%{
+        opacity: 0;
+        scale: 0.5;
+    }
+    100%{
+        opacity: 1;
+        scale: 1;
+    }
 }
