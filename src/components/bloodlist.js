@@ -67,8 +67,7 @@ const BloodList = () => {
         <table className="blood-table">
           <thead>
             <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
+              <th>Full Name</th>
               <th>Age</th>
               <th>Gender</th>
               <th>Blood Group</th>
@@ -80,8 +79,7 @@ const BloodList = () => {
           <tbody>
             {data.map((user, index) => (
               <tr key={index}>
-                <td>{user.firstname}</td>
-                <td>{user.lastname}</td>
+                <td>{user.fullName}</td>
                 <td>{user.age}</td>
                 <td>{user.gender}</td>
                 <td>{user.bloodgroup}</td>
