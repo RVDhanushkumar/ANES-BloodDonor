@@ -5,6 +5,7 @@ const BloodRequest = () => {
   const [formData, setFormData] = useState({
     name: "",
     contact: "",
+    email:"",
     bloodGroup: "",
     location: "",
   });
@@ -36,6 +37,14 @@ const BloodRequest = () => {
           name="contact"
           placeholder="Contact Number"
           value={formData.contact}
+          onChange={handleChange}
+          required
+        />
+         <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={formData.email}
           onChange={handleChange}
           required
         />

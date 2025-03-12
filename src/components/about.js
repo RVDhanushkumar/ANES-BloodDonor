@@ -6,14 +6,15 @@ import lalith from "../assets/lalith.jpg"
 import chandu from "../assets/chandu .jpg";
 import vishnu from "../assets/vishnu.jpg";
 import sharmi from "../assets/sharmi1.jpg";
+import nava from "../assets/nava.png";
 
 const teamMembers = [
   { name: "PV Vishnu Vardhan", role: "Backend Developer", image: vishnu },
   { name: "R V Dhanush Kumar", role: "Frontend-Developer", image: dhanush },
   { name: "Tatikonda Sharmila", role: "UI/UX designer", image: sharmi },
-  { name: "Allu Lalith Kumar", role: "Ex-Intern", image: lalith },
+  { name: "Allu Lalith Kumar", role: "Intern", image: lalith },
   { name: "Karri Chandra Sekhar", role: "Intern", image: chandu },
-  { name: "D Navaneeth", role: "Intern", image: chandu },
+  { name: "D Navaneeth", role: "Intern", image: nava },
 ];
 
 const Avatar = ({ src, alt }) => (
