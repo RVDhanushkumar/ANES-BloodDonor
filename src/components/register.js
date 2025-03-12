@@ -6,8 +6,7 @@ const bloodGroups = ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"];
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    firstname: "",
-    lastname: "",
+    FullName: "",
     age: "",
     gender: "",
     bloodgroup: "",

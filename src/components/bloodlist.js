@@ -7,6 +7,7 @@ const BloodList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [blood, setBlood] = useState("All");
+  const [alldata,setalldata] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,7 +17,8 @@ const BloodList = () => {
           throw new Error("Failed to fetch data");
         }
         const result = await response.json();
-        setData(blood === "All" ? result : result.filter(donor => donor.bloodgroup === blood));
+        setalldata(result);
+        console.log(alldata);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -24,7 +26,14 @@ const BloodList = () => {
       }
     };
     fetchData();
-  }, [blood]);
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+        setData(blood === "All" ? alldata : alldata.filter(donor => donor.bloodgroup === blood));
+      }
+    fetchData();
+  }, [blood,alldata]);
 
   if (loading) return <div className="loading">Loading...</div>;
   if (error) return <div className="error">Error: {error}</div>;
