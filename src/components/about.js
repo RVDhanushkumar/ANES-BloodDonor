@@ -13,6 +13,7 @@ const teamMembers = [
   { name: "Tatikonda Sharmila", role: "UI/UX designer", image: sharmi },
   { name: "Allu Lalith Kumar", role: "Ex-Intern", image: lalith },
   { name: "Karri Chandra Sekhar", role: "Intern", image: chandu },
+  { name: "D Navaneeth", role: "Intern", image: chandu },
 ];
 
 const Avatar = ({ src, alt }) => (
