@@ -17,7 +17,9 @@
     font-size: 25px;
     color: rgb(90, 179, 195);
 }
-
+.navbar a{
+    text-decoration: none;
+}
 .logo img {
     margin-right: 10px;
 }
