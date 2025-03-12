@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
-import { Dialog } from "@mui/material";
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from "@mui/material";
 
 const bloodGroups = ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"];
+const genders = ["Male", "Female", "Other"];
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    FullName: "",
+    fullName: "",
     age: "",
     gender: "",
     bloodgroup: "",
@@ -17,7 +20,7 @@ const Register = () => {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(false);
+  const [successDialogOpen, setSuccessDialogOpen] = useState(false);
   const [captchaValue, setCaptchaValue] = useState(null);
   const [bloodDialogOpen, setBloodDialogOpen] = useState(false);
 
@@ -37,20 +40,19 @@ const Register = () => {
 
     setLoading(true);
     setError(null);
-    setSuccess(false);
 
     try {
       const response = await fetch("https://blood-ey76.onrender.com/user/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, captcha: captchaValue }), // ✅ Sending reCAPTCHA token
+        body: JSON.stringify({ ...formData, captcha: captchaValue }),
       });
 
       if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
-      setSuccess(true);
-      setFormData({ firstname: "", lastname: "", age: "", gender: "", bloodgroup: "", mobile: "", email: "", address: "" });
-      setCaptchaValue(null); // ✅ Reset CAPTCHA
+      setSuccessDialogOpen(true);
+      setFormData({ fullName: "", age: "", gender: "", bloodgroup: "", mobile: "", email: "", address: "" });
+      setCaptchaValue(null);
     } catch (error) {
       setError(error.message);
     } finally {
@@ -58,18 +60,35 @@ const Register = () => {
     }
   };
 
+  const handleSuccessClose = () => {
+    setSuccessDialogOpen(false);
+    navigate("/");
+  };
+
   return (
-    <div style={{ backgroundColor: "#fef0ef", minHeight: "100vh", padding: "20px",paddingTop:"100px" }}>
+    <div style={{ backgroundColor: "#fef0ef", minHeight: "100vh", padding: "20px", paddingTop: "100px" }}>
       <h1 style={{ textAlign: "center", color: "#333", marginBottom: "20px" }}>Registration Form</h1>
       <form onSubmit={handleSubmit} style={{ maxWidth: "600px", margin: "0 auto", backgroundColor: "#fff", padding: "30px", borderRadius: "10px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}>
-        {Object.keys(formData).map((key) => (
-          key !== "bloodgroup" && (
+        {Object.keys(formData).map((key) => {
+          if (key === "bloodgroup") return null;
+          return (
             <div key={key} style={{ marginBottom: "15px" }}>
-              <label style={{ display: "block", marginBottom: "5px", color: "#333" }}>{key.charAt(0).toUpperCase() + key.slice(1)}</label>
-              <input type={key === "age" || key === "mobile" ? "number" : "text"} name={key} value={formData[key]} onChange={handleChange} required style={{ width: "100%", padding: "10px", borderRadius: "5px", border: "1px solid #ddd" }} />
+              <label style={{ display: "block", marginBottom: "5px", color: "#333" }}>
+                {key.charAt(0).toUpperCase() + key.slice(1)}
+              </label>
+              {key === "gender" ? (
+                <select name="gender" value={formData.gender} onChange={handleChange} required style={{ width: "100%", padding: "10px", borderRadius: "5px", border: "1px solid #ddd" }}>
+                  <option value="" disabled>Select Gender</option>
+                  {genders.map((gender) => (
+                    <option key={gender} value={gender}>{gender}</option>
+                  ))}
+                </select>
+              ) : (
+                <input type={key === "age" || key === "mobile" ? "number" : "text"} name={key} value={formData[key]} onChange={handleChange} required style={{ width: "100%", padding: "10px", borderRadius: "5px", border: "1px solid #ddd" }} />
+              )}
             </div>
-          )
-        ))}
+          );
+        })}
 
         <div style={{ marginBottom: "15px" }}>
           <label style={{ display: "block", marginBottom: "5px", color: "#333" }}>Blood Group</label>
@@ -89,7 +108,6 @@ const Register = () => {
         </button>
 
         {error && <div style={{ color: "#ff6b6b", textAlign: "center", marginTop: "10px" }}>Error: {error}</div>}
-        {success && <div style={{ color: "#4CAF50", textAlign: "center", marginTop: "10px" }}>Registration successful!</div>}
       </form>
 
       <Dialog open={bloodDialogOpen} onClose={() => setBloodDialogOpen(false)}>
@@ -101,6 +119,16 @@ const Register = () => {
             </div>
           ))}
         </div>
+      </Dialog>
+
+      <Dialog open={successDialogOpen} onClose={handleSuccessClose}>
+        <DialogTitle>Thank You!</DialogTitle>
+        <DialogContent>
+          <p>Your details have been successfully submitted.</p>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleSuccessClose} color="primary" variant="contained">OK</Button>
+        </DialogActions>
       </Dialog>
     </div>
   );
