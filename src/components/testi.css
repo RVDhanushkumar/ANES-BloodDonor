@@ -47,6 +47,7 @@
     position: relative;
     z-index: 1;
     transition: color 0.1s ease-in-out;
+    color: rgba(92, 203, 222);
 }
 
 .testimonial-quote-icon,
@@ -60,6 +61,7 @@
     display: flex;
     align-items: center;
     gap: 8px; 
+    color: rgb(108, 216, 235);
     background-color: #f9fafb; 
     padding: 24px 24px 20px;
     border-radius: 0 0 12px 12px;
