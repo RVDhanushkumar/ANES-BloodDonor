@@ -10,7 +10,7 @@ import nava from "../assets/nava.png";
 
 const teamMembers = [
   { name: "PV Vishnu Vardhan", role: "Backend Developer", image: vishnu },
-  { name: "R V Dhanush Kumar", role: "Frontend-Developer", image: dhanush },
+  { name: "R V Dhanush Kumar", role: "Full Stack Developer", image: dhanush },
   { name: "Tatikonda Sharmila", role: "UI/UX designer", image: sharmi },
   { name: "Allu Lalith Kumar", role: "Intern", image: lalith },
   { name: "Karri Chandra Sekhar", role: "Intern", image: chandu },
