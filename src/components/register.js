@@ -124,7 +124,7 @@ const Register = () => {
       <Dialog open={successDialogOpen} onClose={handleSuccessClose}>
         <DialogTitle>Thank You!</DialogTitle>
         <DialogContent>
-          <p>Your details have been successfully submitted.</p>
+          <p>Registration successful, check your email for verification link</p>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleSuccessClose} color="primary" variant="contained">OK</Button>
