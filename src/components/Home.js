@@ -9,14 +9,13 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div className='home_main'>
-      {/* Hero Section */}
       <div className='home'>
         <div className='left'>
           <div className='text'>
             <h1>ANES Blood Donor - <span style={{color:"rgba(92, 203, 222)"}}>Find & Donate Blood, Save Lives</span></h1>
             <p>
               Every drop counts, Join our mission to make a life-saving impact. 
-              Donate blood today and be the reason someone gets a second chance at life. ❤️
+              Donate blood today and be the reason someone gets a second chance at life. ❤️✨
             </p>
             <Link to="/register">
               <button className='donate-btn'>Donate Now</button>
@@ -24,7 +23,6 @@ const Home = () => {
           </div>
         </div>
         
-        {/* Image Section */}
         <div className='pic'>
           <div className='right'>
             <div className='extra'></div>
@@ -33,13 +31,9 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Why Donate Section */}
       <Whydonate />
-      
-      {/* Certification Section */}
       <Certi />
 
-      {/* Testimonials Section */}
       <div className='tes'>
         <h2>What Our Donors Say</h2>
         <div className='testi'>
