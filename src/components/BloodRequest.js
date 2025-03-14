@@ -1,23 +1,47 @@
 import React, { useState } from "react";
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Button } from "@mui/material";
 import "./BloodRequest.css";
 
 const BloodRequest = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    contact: "",
-    email:"",
-    bloodGroup: "",
+    fullName: "",
+    phone: "",
+    email: "",
+    bloodgroup: "",
     location: "",
   });
+  const [loading,setLoading] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogMessage, setDialogMessage] = useState("");
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Emergency Blood Request Submitted!\n\nName: ${formData.name}\nContact: ${formData.contact}\nBlood Group: ${formData.bloodGroup}\nLocation: ${formData.location}`);
-    setFormData({ name: "", contact: "", bloodGroup: "", location: "", email:"" });
+    setLoading(true);
+    try {
+      const response = await fetch("https://blood-ey76.onrender.com/user/request-blood", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      setDialogMessage(result.message || "Request submitted successfully!");
+      setDialogOpen(true);
+
+      setFormData({ fullName: "", phone: "", email: "", bloodgroup: "", location: "" });
+    } catch (err) {
+      setDialogMessage("Error: " + err.message);
+      setDialogOpen(true);
+    }
+    setLoading(false);
   };
 
   return (
@@ -26,21 +50,21 @@ const BloodRequest = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="name"
+          name="fullName"
           placeholder="Full Name"
-          value={formData.name}
+          value={formData.fullName}
           onChange={handleChange}
           required
         />
         <input
           type="tel"
-          name="contact"
+          name="phone"
           placeholder="Contact Number"
-          value={formData.contact}
+          value={formData.phone}
           onChange={handleChange}
           required
         />
-         <input
+        <input
           type="email"
           name="email"
           placeholder="Email"
@@ -48,7 +72,7 @@ const BloodRequest = () => {
           onChange={handleChange}
           required
         />
-        <select name="bloodGroup" value={formData.bloodGroup} onChange={handleChange} required>
+        <select name="bloodgroup" value={formData.bloodgroup} onChange={handleChange} required>
           <option value="">Select Blood Group</option>
           <option value="A+">A+</option>
           <option value="A-">A-</option>
@@ -67,8 +91,20 @@ const BloodRequest = () => {
           onChange={handleChange}
           required
         />
-        <button type="submit">Request Blood</button>
+        <button type="submit">{loading?"Requesting in process":"Request Blood"}</button>
       </form>
+
+      <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
+        <DialogTitle>Response</DialogTitle>
+        <DialogContent>
+          <DialogContentText>{dialogMessage}</DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setDialogOpen(false)} color="primary">
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };
