@@ -21,6 +21,8 @@ const BloodList = () => {
         const result = await response.json();
         setalldata(result.filter((donor) => donor.isVerified === true));
         console.log(alldata);
+        setLoading(false);
+        
       } catch (error) {
         setError(error.message);
       } finally {
