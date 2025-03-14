@@ -5,6 +5,7 @@ import Whydonate from './whydonate';
 import Certi from './certi';
 import TestimonialFullWidth from './testi';
 import { Link } from 'react-router-dom';
+import BloodDonationInfo from './BloodDonationInfo';
 
 const Home = () => {
   return (
@@ -32,6 +33,7 @@ const Home = () => {
       </div>
 
       <Whydonate />
+      <BloodDonationInfo />
       <Certi />
 
       <div className='tes'>
