@@ -67,7 +67,7 @@ const Register = () => {
 
   return (
     <div style={{ backgroundColor: "#fef0ef", minHeight: "100vh", padding: "20px", paddingTop: "100px" }}>
-      <h1 style={{ textAlign: "center", color: "#333", marginBottom: "20px" }}>Registration Form</h1>
+      <h1 style={{ textAlign: "center", color: "rgba(98, 176, 189, 0.81)", marginBottom: "20px" }}>Registration Form</h1>
       <form onSubmit={handleSubmit} style={{ maxWidth: "600px", margin: "0 auto", backgroundColor: "#fff", padding: "30px", borderRadius: "10px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}>
         {Object.keys(formData).map((key) => {
           if (key === "bloodgroup") return null;
