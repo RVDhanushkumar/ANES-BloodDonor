@@ -17,7 +17,7 @@ const BloodRequest = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Emergency Blood Request Submitted!\n\nName: ${formData.name}\nContact: ${formData.contact}\nBlood Group: ${formData.bloodGroup}\nLocation: ${formData.location}`);
-    setFormData({ name: "", contact: "", bloodGroup: "", location: "" });
+    setFormData({ name: "", contact: "", bloodGroup: "", location: "", email:"" });
   };
 
   return (
