@@ -1,6 +1,7 @@
 
 .bdinfo_main{
     display: grid;
+    padding: 10px;
     place-content: center;
     height: 80vh;
 }
