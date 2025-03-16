@@ -26,7 +26,7 @@ const BloodRequest = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch("https://blood-ey76.onrender.com/user/request-blood", {
+      const response = await fetch("https://sab-ka-blood.vercel.app/user/request-blood", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

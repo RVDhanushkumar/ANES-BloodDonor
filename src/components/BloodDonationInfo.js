@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./BloodDonationInfo.css"; // Import CSS file
+import "./BloodDonationInfo.css";
 
 const bloodData = {
   "A+": { canDonateTo: ["A+", "AB+"], canReceiveFrom: ["A+", "A-", "O+", "O-"] },

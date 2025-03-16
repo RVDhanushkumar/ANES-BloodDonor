@@ -13,16 +13,15 @@ const BloodList = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://blood-ey76.onrender.com/user/getAllEntries"
+          "https://sab-ka-blood.vercel.app/user/getAllEntries"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
         const result = await response.json();
         setalldata(result.filter((donor) => donor.isVerified === true));
-        console.log(alldata);
         setLoading(false);
-        
+
       } catch (error) {
         setError(error.message);
       } finally {
@@ -78,6 +77,7 @@ const BloodList = () => {
           </select>
         </div>
       </div>
+      
       <div className="table-wrapper">
         <table className="blood-table">
           <thead>
