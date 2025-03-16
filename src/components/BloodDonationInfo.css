@@ -129,23 +129,5 @@
     }
   }
   
-  /* Responsive Design */
-  @media screen and (max-width: 500px) {
-    .container {
-      padding: 20px;
-      width: 95%;
-    }
-  
-    .blood-group-buttons {
-      flex-direction: column;
-    }
-  
-    .info-card {
-      flex-direction: column;
-    }
-  
-    .info-block {
-      width: 100%;
-    }
-  }
+
   
