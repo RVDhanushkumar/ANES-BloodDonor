@@ -2,7 +2,7 @@
 .bdinfo_main{
     display: grid;
     place-content: center;
-    padding: 20px;
+    height: 80vh;
 }
   .container {
     text-align: center;
@@ -92,7 +92,6 @@
     background-color: #ff4d4d;
   }
   
-  /* Donation Message */
   .donation-message {
     margin-top: 20px;
     font-size: 18px;
@@ -129,5 +128,8 @@
     }
   }
   
-
+  /* Responsive Design */
+  @media screen and (max-width: 500px) {
+    
+  }
   
