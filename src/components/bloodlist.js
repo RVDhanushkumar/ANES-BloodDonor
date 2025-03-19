@@ -18,8 +18,8 @@ const BloodList = () => {
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
-        const result = await response.json();
-        setalldata( result.filter((donor) => donor.isVerified === true));
+        const res = await response.json();
+        setalldata( res.filter((donor) => donor.isVerified === true));
         setLoading(false);
 
       } catch (error) {
