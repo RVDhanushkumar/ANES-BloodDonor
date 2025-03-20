@@ -42,7 +42,7 @@ const Register = () => {
     setError(null);
 
     try {
-      const response = await fetch("https://blood-ey76.onrender.com/user/register", {
+      const response = await fetch("https://sab-ka-blood.vercel.app/user/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, captcha: captchaValue }),
