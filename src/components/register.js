@@ -48,7 +48,7 @@ const Register = () => {
         body: JSON.stringify({ ...formData, captcha: captchaValue }),
       });
 
-      if (!response.ok) throw new Error("Email Already Register...!!");
+      if (!response.ok) throw new Error(`${response.status}`);
 
       setSuccessDialogOpen(true);
       setFormData({ fullName: "", age: "", gender: "", bloodgroup: "", mobile: "", email: "", address: "" });
