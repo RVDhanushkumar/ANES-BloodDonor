@@ -20,7 +20,7 @@ export default function Header() {
                 <Link to="/register" className="sign-in" onClick={handleLinkClick}>Donate</Link>
                 <Link to="/getallData" onClick={handleLinkClick}>Request Blood</Link>
                 <Link to="/about" className="sign-in" onClick={handleLinkClick}>About</Link>
-                <Link to="/hall-of-fame" className="sign-in" onClick={handleLinkClick}>Hall of Fame</Link>
+                {/* <Link to="/hall-of-fame" className="sign-in" onClick={handleLinkClick}>Hall of Fame</Link> */}
             </div>
 
             <div className="extend">
