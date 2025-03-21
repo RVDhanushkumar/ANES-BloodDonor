@@ -48,7 +48,7 @@ const Register = () => {
         body: JSON.stringify({ ...formData, captcha: captchaValue }),
       });
 
-      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+      if (!response.ok) throw new Error(`${response.message}`);
 
       setSuccessDialogOpen(true);
       setFormData({ fullName: "", age: "", gender: "", bloodgroup: "", mobile: "", email: "", address: "" });
