@@ -107,7 +107,7 @@ const Register = () => {
           {loading ? "Registering..." : "Register"}
         </button>
 
-        {error && <div style={{ color: "#ff6b6b", textAlign: "center", marginTop: "10px" }}>Error: {error}</div>}
+        {error && <div style={{ color: "#ff6b6b", textAlign: "center", marginTop: "10px" }}>{error}</div>}
       </form>
 
       <Dialog open={bloodDialogOpen} onClose={() => setBloodDialogOpen(false)}>
